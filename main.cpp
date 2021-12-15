@@ -206,24 +206,9 @@ struct CupReceptacle {
     }
 };
 
-//how many cups does the user want?
-int UserRequest() {
-    int userInput;
-    std::cout << "How many cups of coffee would you like: ";
-    std::cin >> userInput;
-
-    if (userInput > 0) {
-        return userInput;
-    }
-    else if (userInput <= 0) {
-        std::cout << "Please enter a number greater than 0" << std::endl;
-        UserRequest();
-    }
-}
-
 int main() {
     //number of cups to make
-    int numberOfCups = UserRequest();
+    int numberOfCups = 5;
 
     //make the hopper, resevoir, heat source, and grinder. Use pointers to make sure its always the same object for every coffee cup
     Hopper *hopper = new Hopper();
